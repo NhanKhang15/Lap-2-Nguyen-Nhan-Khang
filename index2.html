@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .survey-card {
+            max-width: 600px;
+            border: 2px solid blue;
+            border-radius: 4px;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        h5,h3 {
+            font-weight: bold;
+        }
+
+        .form-check-label {
+            margin-left: 4  px;
+            font-size: 16px;
+        }
+
+        button {
+            font-weight: bold;
+        }
+
+        @media (max-width: 576px) {
+            .survey-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="card p-4 shadow survey-card mx-auto">
+            <div class="mb-3 text-">
+                <img src="https://blackboard.hcmiu.edu.vn/branding/_1_1/hcmiu_logo.png"
+                    alt="Logo" class="logo" />
+            </div>
+
+            <h3 class="text-success mt-4">Survey</h3>
+            <p class="text-muted">If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+
+            <form id="surveyForm">
+                <h5 class="text-success mt-4">Your information:</h5>
+                <div class="mb-3 d-flex align-items-center">
+                    <label class="form-label me-2" style="width: 120px; font-weight: bold;">First Name</label>
+                    <input type="text" class="form-control" name="firstName" required />
+                </div>
+                <div class="mb-3 d-flex align-items-center">
+                    <label class="form-label me-2" style="width: 120px; font-weight: bold;">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" required />
+                </div>
+                <div class="mb-3 d-flex align-items-center">
+                    <label class="form-label me-2" style="width: 120px; font-weight: bold;">Email</label>
+                    <input type="text" class="form-control" name="lastName" required />
+                </div>
+                <div class="mb-3 d-flex align-items-center">
+                    <label class="form-label me-2" style="width: 120px; font-weight: bold;">Date of Birth</label>
+                    <input type="text" class="form-control" name="lastName" required />
+                </div>
+
+
+                <!-- Radio buttons -->
+                <h5 class="text-success mt-4">How did you hear about us?</h5>
+                <div class="mb-3 d-flex align-items-center">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="source" value="Search engine" required />
+                        <label class="form-check-label">Search engine</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="source" value="Word of mouth" />
+                        <label class="form-check-label">Word of mouth</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="source" value="Social Media" />
+                        <label class="form-check-label">Social Media</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="source" value="Other" />
+                        <label class="form-check-label">Other</label>
+                    </div>
+                </div>
+
+
+                <!-- Checkboxes -->
+                <h5 class="text-success mt-4">Would you like to receive announcements about new CDs and special offers?
+                </h5>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="announcements"
+                            value="Yes, I'd like that." />
+                        <label class="form-check-label">YES, I'd like that.</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="emailAnnouncements"
+                            value="Please send me email announcements." />
+                        <label class="form-check-label">YES, please send me email announcements.</label>
+                    </div>
+                </div>
+
+                <!-- Dropdown -->
+                <div class="mb-4 d-flex align-items-center">
+                    <label class="form-label">Please contact me by:</label>
+                    <select class="form-select" style="width: 200px; height: auto" name="contactMethod" required>
+                        <option value="Email or postal mail">Email or postal mail</option>
+                        <option value="Email only">Email only</option>
+                        <option value="Postal mail only">Postal mail only</option>
+                    </select>
+                </div>
+
+                <!-- Submit -->
+                <div>
+                    <button type="submit" class="">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    document.getElementById("surveyForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("✅ Form submitted successfully!");
+    });
+
+</script>
+
+</html>
